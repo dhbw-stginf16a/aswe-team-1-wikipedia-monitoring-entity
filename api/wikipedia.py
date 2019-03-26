@@ -27,10 +27,13 @@ def getOnThisDay(body):
         if req_type == 'events' or req_type == 'all': events.append(get_relevant_keys(random.choice(data['events'])))
         if req_type == 'holidays' or req_type == 'all': holidays.append(get_relevant_keys(random.choice(data['holidays'])))
     response = {
-        'deaths': deaths,
-        'births': births,
-        'events': events,
-        'holidays': holidays
+        'type': body['payload']['type']
+        'payload': {
+            'deaths': deaths,
+            'births': births,
+            'events': events,
+            'holidays': holidays
+        }
     }
     return [response], 200
 
