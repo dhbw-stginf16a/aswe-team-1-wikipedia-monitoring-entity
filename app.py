@@ -29,9 +29,6 @@ application = app.app
 logger.info('App initialized')
 
 # Start the update manager thread
-updater = CalendarUpdateManager()
-
-logger.info('Updater intialized')
 
 app.registerThread = RegistrationThread(CENTRAL_NODE_BASE_URL, OUR_URL)
 app.registerThread.start()

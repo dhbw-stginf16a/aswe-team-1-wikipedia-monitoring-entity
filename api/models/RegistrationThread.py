@@ -38,4 +38,4 @@ class RegistrationThread:
             time.sleep(5)
 
     def stop(self):
-self.run = False
+        self.run = False
